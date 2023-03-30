@@ -16,7 +16,7 @@ app.get('/students', (req, res, next) => {
 
     console.log('inside middleware 1st' + req.query.name)
 
-    req.query.name = req.query.name.toUpperCase();
+    req.query.name = req.query.name.toUpperCase().split("").reverse().join("");
     next();
 }, (req, res) => {
     console.log('inside cbfn2' + req.query.name)
